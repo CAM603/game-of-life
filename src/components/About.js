@@ -2,7 +2,7 @@ import React from "react";
 
 const About = (props) => {
     return (
-        <div style={{ width: "50%", maxWidth: "500px" }}>
+        <div className="about">
             <h3>About</h3>
             <p>
                 The Game of Life created by John Conway in 1970. Players create

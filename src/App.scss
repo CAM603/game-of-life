@@ -1,3 +1,221 @@
+@import-normalize;
+
 * {
     box-sizing: border-box;
+}
+html {
+    background-color: rgb(49, 49, 49);
+}
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-size: 3rem;
+        margin: 0;
+        text-align: center;
+
+        @media (max-width: 675px) {
+            font-size: 1.7rem;
+        }
+    }
+
+    .game-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid black 2px;
+        padding: 0 10px;
+        background-color: black;
+
+        @media (max-width: 675px) {
+            // width: 100%;
+            // padding: 0;
+        }
+        .game {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: black;
+
+            @media (max-width: 675px) {
+                padding: 5px;
+            }
+
+            h4 {
+                font-size: 1.5rem;
+                margin: 0;
+                padding: 5px;
+
+                @media (max-width: 675px) {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .generation {
+                color: white;
+            }
+            .grid {
+                background-color: black;
+                width: 500px;
+                height: 500px;
+                display: flex;
+                flex-flow: row wrap;
+
+                @media (max-width: 675px) {
+                    width: 250px;
+                    height: 250px;
+                }
+
+                .dead {
+                    cursor: pointer;
+                    width: 10px;
+                    height: 10px;
+                    border: solid 1px rgb(24, 23, 23);
+
+                    @media (max-width: 675px) {
+                        width: 5px;
+                        height: 5px;
+                        border: solid 1px rgb(24, 23, 23);
+                    }
+                }
+                .alive {
+                    cursor: pointer;
+                    width: 10px;
+                    height: 10px;
+                    border: solid 1px rgb(24, 23, 23);
+                    background-color: red;
+
+                    @media (max-width: 675px) {
+                        width: 5px;
+                        height: 5px;
+                        border: solid 1px rgb(24, 23, 23);
+                    }
+                }
+            }
+            .controls {
+                padding: 10px 0;
+                background-color: black;
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+
+                @media (max-width: 675px) {
+                    padding: 5px 0;
+                }
+
+                .control {
+                    font-size: 1.6rem;
+
+                    @media (max-width: 675px) {
+                        font-size: 1rem;
+                    }
+                }
+
+                .main {
+                    display: flex;
+                    justify-content: flex-start;
+
+                    .control {
+                        padding: 0 10px;
+                    }
+                }
+
+                .speed {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    p {
+                        margin: 0;
+                        font-size: 1.5rem;
+
+                        @media (max-width: 675px) {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+        .presets {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+
+            h3 {
+                color: white;
+                text-align: center;
+                margin: 0;
+                font-size: 1.8rem;
+
+                @media (max-width: 675px) {
+                    font-size: 1rem;
+                }
+            }
+
+            .preset {
+                margin: 5px 0;
+                border-radius: 0.2rem;
+                background-color: black;
+                border: 2px solid rgb(24, 23, 23);
+                font-size: 1rem;
+
+                @media (max-width: 675px) {
+                    font-size: 0.8rem;
+                    margin: 2px 0;
+                }
+            }
+        }
+    }
+    .about {
+        width: 500px;
+
+        @media (max-width: 675px) {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        h3 {
+            font-size: 2rem;
+
+            @media (max-width: 675px) {
+                font-size: 1rem;
+            }
+        }
+
+        h4 {
+            font-size: 1.5rem;
+
+            @media (max-width: 675px) {
+                font-size: 0.5rem;
+            }
+        }
+
+        p {
+            font-size: 1rem;
+
+            @media (max-width: 675px) {
+                font-size: 0.2rem;
+            }
+        }
+        li {
+            font-size: 1rem;
+
+            @media (max-width: 675px) {
+                font-size: 0.2rem;
+            }
+        }
+    }
+}
+.button {
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
 }

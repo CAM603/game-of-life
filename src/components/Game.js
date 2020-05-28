@@ -77,33 +77,11 @@ const Game = () => {
     };
 
     return (
-        <div
-            style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-            }}
-        >
+        <div className="screen">
             <h1>John Conway's Game of Life</h1>
-            <div
-                style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    border: "solid black 2px",
-                    padding: "0 10px",
-                    backgroundColor: "black",
-                }}
-            >
-                <div
-                    style={{
-                        padding: "10px",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}
-                >
-                    <h2 style={{ color: "white" }}>Generation: {generation}</h2>
+            <div className="game-container">
+                <div className="game">
+                    <h4 className="generation">Generation: {generation}</h4>
                     <Grid world={world} setWorld={setWorld} playing={playing} />
                     <Controls
                         playing={playing}

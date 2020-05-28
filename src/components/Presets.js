@@ -2,6 +2,8 @@ import React from "react";
 import { getFigure } from "../figures";
 import { getWorld } from "../worlds";
 import { generateRandomGrid } from "../game";
+import Button from "./Button";
+import { BsFillQuestionCircleFill } from "react-icons/bs";
 
 const Presets = ({ setWorld }) => {
     const addGlider = () => {
@@ -25,18 +27,23 @@ const Presets = ({ setWorld }) => {
     };
 
     return (
-        <div
-            style={{
-                display: "flex",
-                alignItems: "center",
-                flexDirection: "column",
-            }}
-        >
-            <button onClick={addPulsar}>Pulsar</button>
-            <button onClick={addGlider}>Glider</button>
-            <button onClick={addGun}>Glider Gun</button>
-            <button onClick={home}>Home</button>
-            <button onClick={random}>Random</button>
+        <div className="presets">
+            <h3>Presets</h3>
+            <Button className="preset" onClick={addPulsar}>
+                Pulsar
+            </Button>
+            <Button className="preset" onClick={addGlider}>
+                Glider
+            </Button>
+            <Button className="preset" onClick={addGun}>
+                Glider Gun
+            </Button>
+            <Button className="preset" onClick={home}>
+                Home
+            </Button>
+            <Button className="preset" onClick={random}>
+                <BsFillQuestionCircleFill className="" />
+            </Button>
         </div>
     );
 };

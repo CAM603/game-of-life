@@ -14,16 +14,7 @@ const Cell = ({ world, row_index, col_index, setWorld, playing }) => {
         <>
             <div
                 onClick={handleClick}
-                style={{
-                    width: "10px",
-                    height: "10px",
-                    // width: "5px",
-                    // height: "5px",
-                    backgroundColor: world[row_index][col_index]
-                        ? "#BADA22"
-                        : undefined,
-                    border: "solid purple 1px",
-                }}
+                className={world[row_index][col_index] ? "alive" : "dead"}
             />
         </>
     );

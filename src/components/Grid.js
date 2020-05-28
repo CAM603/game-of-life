@@ -1,19 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Cell from "./Cell";
 
 const Grid = (props) => {
     return (
-        <div
-            style={{
-                backgroundColor: "grey",
-                width: "500px",
-                height: "500px",
-                // width: "250px",
-                // height: "250px",
-                display: "flex",
-                flexFlow: "row wrap",
-            }}
-        >
+        <div className="grid">
             {props.world.map((rows, row_index) =>
                 rows.map((col, col_index) => (
                     <Cell
