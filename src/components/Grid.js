@@ -5,9 +5,13 @@ const Grid = (props) => {
     return (
         <div
             style={{
-                display: "grid",
-                gridTemplateColumns: `repeat(${50}, 10px)`,
                 backgroundColor: "grey",
+                width: "500px",
+                height: "500px",
+                // width: "250px",
+                // height: "250px",
+                display: "flex",
+                flexFlow: "row wrap",
             }}
         >
             {props.world.map((rows, row_index) =>

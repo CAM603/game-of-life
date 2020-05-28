@@ -1,25 +1,12 @@
 import React from "react";
-const Controls = ({
-    playing,
-    togglePlay,
-    clear,
-    random,
-    next,
-    increaseSpeed,
-    decreaseSpeed,
-    addGlider,
-    addPulsar,
-}) => {
+const Controls = ({ playing, togglePlay, clear, next, changeSpeed }) => {
     return (
-        <div>
+        <div style={{ padding: "10px", backgroundColor: "black" }}>
             <button onClick={togglePlay}>{playing ? "Stop" : "Play"}</button>
             <button onClick={clear}>Clear</button>
-            <button onClick={random}>Random</button>
             <button onClick={next}>Next</button>
-            <button onClick={increaseSpeed}>Speed it up</button>
-            <button onClick={decreaseSpeed}>Slow it down</button>
-            <button onClick={addGlider}>Glider</button>
-            <button onClick={addPulsar}>Pulsar</button>
+            <button onClick={() => changeSpeed("faster")}>Speed it up</button>
+            <button onClick={() => changeSpeed("slower")}>Slow it down</button>
         </div>
     );
 };
