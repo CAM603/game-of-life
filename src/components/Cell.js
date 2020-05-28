@@ -15,12 +15,12 @@ const Cell = ({ world, row_index, col_index, setWorld, playing }) => {
             <div
                 onClick={handleClick}
                 style={{
-                    width: 15,
-                    height: 15,
+                    width: 10,
+                    height: 10,
                     backgroundColor: world[row_index][col_index]
-                        ? "green"
+                        ? "#BADA22"
                         : undefined,
-                    border: "solid black 1px",
+                    border: "solid purple 1px",
                 }}
             />
         </>

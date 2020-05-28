@@ -1,17 +1,15 @@
 import React, { useState, useRef, useCallback } from "react";
-import {
-    generateWorld,
-    worldBuffer,
-    generateRandomGrid,
-    generatePulsar,
-    generateGlider,
-} from "../game";
+import { generateWorld, worldBuffer, generateRandomGrid } from "../game";
+import { getFigure } from "../figures";
 import Grid from "./Grid";
 import Controls from "./Controls";
+import Presets from "./Presets";
+import { getWorld } from "../worlds";
+import About from "./About";
 
 const Game = () => {
     const [world, setWorld] = useState(() => {
-        return generatePulsar();
+        return getWorld("gun");
     });
     const [generation, setGeneration] = useState(0);
     const [playing, setPlaying] = useState(false);
@@ -82,7 +80,11 @@ const Game = () => {
     };
 
     const addGlider = () => {
-        setWorld(generateGlider());
+        setWorld(getFigure("glider"));
+    };
+
+    const addPulsar = () => {
+        setWorld(getFigure("pulsar"));
     };
 
     return (
@@ -90,22 +92,42 @@ const Game = () => {
             style={{
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
                 alignItems: "center",
             }}
         >
-            <Controls
-                playing={playing}
-                togglePlay={togglePlay}
-                clear={clear}
-                random={random}
-                next={next}
-                increaseSpeed={increaseSpeed}
-                decreaseSpeed={decreaseSpeed}
-                addGlider={addGlider}
-            />
-            <h1>Generation {generation}</h1>
-            <Grid world={world} setWorld={setWorld} playing={playing} />
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+            >
+                <div
+                    style={{
+                        border: "solid black 2px",
+                        padding: "0 10px",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                    }}
+                >
+                    <h1>Generation {generation}</h1>
+                    <Grid world={world} setWorld={setWorld} playing={playing} />
+                    <Controls
+                        playing={playing}
+                        togglePlay={togglePlay}
+                        clear={clear}
+                        random={random}
+                        next={next}
+                        increaseSpeed={increaseSpeed}
+                        decreaseSpeed={decreaseSpeed}
+                        addGlider={addGlider}
+                        addPulsar={addPulsar}
+                    />
+                </div>
+                <Presets />
+            </div>
+            <About />
         </div>
     );
 };

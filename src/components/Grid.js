@@ -6,7 +6,8 @@ const Grid = (props) => {
         <div
             style={{
                 display: "grid",
-                gridTemplateColumns: `repeat(${50}, 15px)`,
+                gridTemplateColumns: `repeat(${50}, 10px)`,
+                backgroundColor: "grey",
             }}
         >
             {props.world.map((rows, row_index) =>

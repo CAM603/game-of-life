@@ -8,6 +8,7 @@ const Controls = ({
     increaseSpeed,
     decreaseSpeed,
     addGlider,
+    addPulsar,
 }) => {
     return (
         <div>
@@ -18,6 +19,7 @@ const Controls = ({
             <button onClick={increaseSpeed}>Speed it up</button>
             <button onClick={decreaseSpeed}>Slow it down</button>
             <button onClick={addGlider}>Glider</button>
+            <button onClick={addPulsar}>Pulsar</button>
         </div>
     );
 };
