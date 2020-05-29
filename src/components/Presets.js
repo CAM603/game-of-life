@@ -28,7 +28,7 @@ const Presets = ({ setWorld }) => {
 
     return (
         <div className="presets">
-            <h3>Presets</h3>
+            <h3>Figures</h3>
             <Button className="preset" onClick={addPulsar}>
                 Pulsar
             </Button>

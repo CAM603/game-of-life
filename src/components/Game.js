@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback } from "react";
 import { generateWorld, worldBuffer } from "../game";
+import { getWorld } from "../worlds";
 import Grid from "./Grid";
 import Controls from "./Controls";
 import Presets from "./Presets";
@@ -7,7 +8,7 @@ import About from "./About";
 
 const Game = () => {
     const [world, setWorld] = useState(() => {
-        return generateWorld();
+        return getWorld("earth");
     });
     const [generation, setGeneration] = useState(0);
     const [playing, setPlaying] = useState(false);
@@ -21,7 +22,9 @@ const Game = () => {
     generationRef.current = generation;
     speedRef.current = speed;
 
+    // Main simulation function
     const play = useCallback(() => {
+        // Breaks loop
         if (!playingRef.current) {
             return;
         }
@@ -87,7 +90,6 @@ const Game = () => {
                         clear={clear}
                         next={next}
                         changeSpeed={changeSpeed}
-                        speedRef={speedRef}
                     />
                 </div>
                 <Presets setWorld={setWorld} />
