@@ -2,7 +2,7 @@ import { generateWorld } from "./game";
 
 // Returns a new world with a preset figure
 export const getFigure = (figure) => {
-    let newWorld = generateWorld(figure);
+    let newWorld = generateWorld();
     switch (figure) {
         case "pulsar":
             return pulsar(newWorld);
