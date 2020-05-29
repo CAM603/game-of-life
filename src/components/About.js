@@ -31,7 +31,6 @@ const About = (props) => {
                     Any dead cell with exactly three live neighbors becomes a
                     live cell, as if by reproduction.
                 </li>
-                <li>Rule</li>
             </ul>
         </div>
     );

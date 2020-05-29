@@ -3,7 +3,14 @@ import Button from "./Button";
 import { FaRegPlayCircle, FaRegStopCircle, FaEraser } from "react-icons/fa";
 import { BsSkipForward, BsPlusCircle } from "react-icons/bs";
 import { FiMinusCircle } from "react-icons/fi";
-const Controls = ({ playing, togglePlay, clear, next, changeSpeed }) => {
+const Controls = ({
+    playing,
+    togglePlay,
+    clear,
+    next,
+    changeSpeed,
+    speedRef,
+}) => {
     return (
         <div className="controls">
             <div className="main">
@@ -24,12 +31,16 @@ const Controls = ({ playing, togglePlay, clear, next, changeSpeed }) => {
                 >
                     <FiMinusCircle />
                 </Button>
-                <p style={{ color: "white" }}>Speed</p>
+                <p>Speed</p>
                 <Button
                     className="control"
                     onClick={() => changeSpeed("faster")}
                 >
-                    <BsPlusCircle />
+                    {speedRef.current === 10 ? (
+                        <BsPlusCircle style={{ color: "black" }} />
+                    ) : (
+                        <BsPlusCircle />
+                    )}
                 </Button>
             </div>
         </div>

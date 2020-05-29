@@ -58,12 +58,12 @@ const Game = () => {
     const changeSpeed = (speed) => {
         switch (speed) {
             case "faster": {
-                if (speedRef.current > 100) {
-                    return setSpeed(speedRef.current - 100);
-                } else if (speedRef.current <= 100 && speedRef.current > 5) {
-                    return setSpeed(speedRef.current - 5);
+                if (speedRef.current > 200) {
+                    return setSpeed(speedRef.current - 200);
+                } else if (speedRef.current <= 100 && speedRef.current >= 50) {
+                    return setSpeed(speedRef.current - 50);
                 } else {
-                    return console.log("WARNING");
+                    return setSpeed((speedRef.current = 10));
                 }
             }
             case "slower": {
@@ -89,6 +89,7 @@ const Game = () => {
                         clear={clear}
                         next={next}
                         changeSpeed={changeSpeed}
+                        speedRef={speedRef}
                     />
                 </div>
                 <Presets setWorld={setWorld} />

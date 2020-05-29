@@ -11,23 +11,23 @@ const operations = [
     [-1, 0],
 ];
 
+const getNeighbors = (i, j, world) => {
+    let neighbors = 0;
+    operations.forEach(([x, y]) => {
+        const newI = i + x;
+        const newJ = j + y;
+        if (newI >= 0 && newI < GRID_SIZE && newJ >= 0 && newJ < GRID_SIZE) {
+            neighbors += world[newI][newJ];
+        }
+    });
+    return neighbors;
+};
+
 export const worldBuffer = (world) => {
     let newWorld = generateWorld();
     for (let i = 0; i < GRID_SIZE; i++) {
         for (let j = 0; j < GRID_SIZE; j++) {
-            let neighbors = 0;
-            operations.forEach(([x, y]) => {
-                const newI = i + x;
-                const newJ = j + y;
-                if (
-                    newI >= 0 &&
-                    newI < GRID_SIZE &&
-                    newJ >= 0 &&
-                    newJ < GRID_SIZE
-                ) {
-                    neighbors += world[newI][newJ];
-                }
-            });
+            let neighbors = getNeighbors(i, j, world);
 
             newWorld[i][j] =
                 neighbors === 3 || (neighbors === 2 && world[i][j] === 1)
