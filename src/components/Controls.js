@@ -29,7 +29,11 @@ const Controls = ({
                     className="control"
                     onClick={() => changeSpeed("slower")}
                 >
-                    <FiMinusCircle />
+                    {speedRef.current === 1100 ? (
+                        <FiMinusCircle style={{ color: "black" }} />
+                    ) : (
+                        <FiMinusCircle />
+                    )}
                 </Button>
                 <p>Speed</p>
                 <Button

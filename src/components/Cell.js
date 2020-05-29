@@ -14,7 +14,9 @@ const Cell = ({ world, row_index, col_index, setWorld, playing }) => {
         <>
             <div
                 onClick={handleClick}
-                className={world[row_index][col_index] ? "alive" : "dead"}
+                className={`cell ${
+                    world[row_index][col_index] ? "alive" : "dead"
+                }`}
             />
         </>
     );

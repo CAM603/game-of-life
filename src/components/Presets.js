@@ -18,8 +18,8 @@ const Presets = ({ setWorld }) => {
         setWorld(getFigure("gliderGun"));
     };
 
-    const home = () => {
-        setWorld(getWorld("home"));
+    const earth = () => {
+        setWorld(getWorld("earth"));
     };
 
     const random = () => {
@@ -38,8 +38,8 @@ const Presets = ({ setWorld }) => {
             <Button className="preset" onClick={addGun}>
                 Glider Gun
             </Button>
-            <Button className="preset" onClick={home}>
-                Home
+            <Button className="preset" onClick={earth}>
+                Earth
             </Button>
             <Button className="preset" onClick={random}>
                 <BsFillQuestionCircleFill className="" />

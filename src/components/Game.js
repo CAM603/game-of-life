@@ -30,10 +30,8 @@ const Game = () => {
             return worldBuffer(curWorld);
         });
         setGeneration(generationRef.current + 1);
-        setTimeout(() => {
-            play();
-        }, speedRef.current);
-    }, []);
+        setTimeout(play, speedRef.current);
+    }, [speedRef.current]);
 
     const togglePlay = () => {
         setPlaying(!playing);
@@ -70,7 +68,7 @@ const Game = () => {
                 if (speedRef.current < 3000) {
                     return setSpeed(speedRef.current + 100);
                 } else {
-                    return console.log("Too slow");
+                    return setSpeed((speedRef.current = 1100));
                 }
             }
         }

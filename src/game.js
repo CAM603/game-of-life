@@ -1,5 +1,6 @@
 export const GRID_SIZE = 50;
 
+// Represents all possible neighbors of a cell
 const operations = [
     [0, 1],
     [0, -1],
@@ -11,6 +12,7 @@ const operations = [
     [-1, 0],
 ];
 
+// Finds the number of neighbors of a cell
 const getNeighbors = (i, j, world) => {
     let neighbors = 0;
     operations.forEach(([x, y]) => {
@@ -23,12 +25,13 @@ const getNeighbors = (i, j, world) => {
     return neighbors;
 };
 
+// Takes in a world and returns a new world based on the rules of life
 export const worldBuffer = (world) => {
     let newWorld = generateWorld();
     for (let i = 0; i < GRID_SIZE; i++) {
         for (let j = 0; j < GRID_SIZE; j++) {
             let neighbors = getNeighbors(i, j, world);
-
+            // Determine which cells live and die
             newWorld[i][j] =
                 neighbors === 3 || (neighbors === 2 && world[i][j] === 1)
                     ? 1
@@ -38,6 +41,7 @@ export const worldBuffer = (world) => {
     return newWorld;
 };
 
+// Generates a world filled with dead cells
 export const generateWorld = () => {
     const rows = [];
     for (let i = 0; i < GRID_SIZE; i++) {
@@ -47,6 +51,7 @@ export const generateWorld = () => {
     return rows;
 };
 
+// Generates a world with random dead and alive cells
 export const generateRandomGrid = () => {
     const rows = [];
     for (let i = 0; i < GRID_SIZE; i++) {

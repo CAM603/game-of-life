@@ -88,12 +88,11 @@ html {
                     width: 15rem;
                     height: 15rem;
                 }
-
-                .dead {
+                .cell {
                     cursor: pointer;
                     width: 0.8rem;
                     height: 0.8rem;
-                    border: solid 1px darkgreen;
+                    border: solid 1px $dark-color;
 
                     @media (max-width: 800px) {
                         width: 0.6rem;
@@ -103,7 +102,6 @@ html {
                     @media (max-width: 675px) {
                         width: 0.4rem;
                         height: 0.4rem;
-                        border: solid 1px darkgreen;
                     }
 
                     @media (max-width: 450px) {
@@ -111,29 +109,9 @@ html {
                         height: 0.3rem;
                     }
                 }
-                .alive {
-                    cursor: pointer;
-                    width: 0.8rem;
-                    height: 0.8rem;
-                    border: solid 1px darkgreen;
+                .cell.alive {
                     // background-color: red;
                     background-color: rgb(153, 252, 5);
-
-                    @media (max-width: 800px) {
-                        width: 0.6rem;
-                        height: 0.6rem;
-                    }
-
-                    @media (max-width: 675px) {
-                        width: 0.4rem;
-                        height: 0.4rem;
-                        border: solid 1px darkgreen;
-                    }
-
-                    @media (max-width: 450px) {
-                        width: 0.3rem;
-                        height: 0.3rem;
-                    }
                 }
             }
             .controls {

@@ -1,15 +1,16 @@
 import { generateWorld } from "./game";
 import { pulsar, glider, gliderLeft } from "./figures";
 
+// Returns a preconfigured world
 export const getWorld = (figure) => {
     let newWorld = generateWorld(figure);
     switch (figure) {
-        case "home":
-            return home(newWorld);
+        case "earth":
+            return earth(newWorld);
     }
 };
 
-const home = (world) => {
+const earth = (world) => {
     pulsar(world);
     glider(world);
     gliderLeft(world);
