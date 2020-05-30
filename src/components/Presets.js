@@ -5,24 +5,29 @@ import { generateRandomGrid } from "../game";
 import Button from "./Button";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 
-const Presets = ({ setWorld }) => {
+const Presets = ({ setWorld, setGeneration }) => {
     const addGlider = () => {
+        setGeneration(0);
         setWorld(getFigure("glider"));
     };
 
     const addPulsar = () => {
+        setGeneration(0);
         setWorld(getFigure("pulsar"));
     };
 
     const addGun = () => {
+        setGeneration(0);
         setWorld(getFigure("gliderGun"));
     };
 
     const earth = () => {
+        setGeneration(0);
         setWorld(getWorld("earth"));
     };
 
     const random = () => {
+        setGeneration(0);
         setWorld(generateRandomGrid());
     };
 

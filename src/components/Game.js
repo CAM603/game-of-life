@@ -34,7 +34,7 @@ const Game = () => {
         });
         setGeneration(generationRef.current + 1);
         setTimeout(play, speedRef.current);
-    }, [speedRef.current]);
+    }, []);
 
     const togglePlay = () => {
         setPlaying(!playing);
@@ -92,7 +92,7 @@ const Game = () => {
                         changeSpeed={changeSpeed}
                     />
                 </div>
-                <Presets setWorld={setWorld} />
+                <Presets setWorld={setWorld} setGeneration={setGeneration} />
             </div>
             <About />
         </div>
