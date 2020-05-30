@@ -276,3 +276,11 @@ html {
     color: $light-color;
     cursor: pointer;
 }
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+.link:hover {
+    color: rgb(153, 252, 5);
+}

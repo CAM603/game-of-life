@@ -1,17 +1,27 @@
 import React from "react";
 
-const About = (props) => {
+const About = () => {
     return (
         <div className="about">
             <h3>About</h3>
             <p>
-                The Game of Life created by John Conway in 1970. Players create
-                or select an initial configuration and then observe how it
-                evolves over an infinite number of generations. The world is an
-                infinite 2D grid of square cells, each that can be either dead
-                or alive. Every cell interacts with its eight neighbors
-                (horizontally, vertically, diagonally or adjacent) and after
-                every generation, the rules dictate which cells live and die.
+                The Game of Life was created by{" "}
+                <a
+                    className="link"
+                    href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+                    target="_blank"
+                >
+                    John Conway
+                </a>{" "}
+                in 1970. The game consists of a 2D grid of cells, each cell
+                having one of two states: dead or alive. A new generation of
+                cells is created according to a simple set of rules, from which
+                complex behaviors can emerge. Players can create or select an
+                initial configuration and then observe how it evolves over an
+                infinite number of generations. Every cell interacts with its
+                eight neighbors (horizontally, vertically, diagonally or
+                adjacent) and after every generation, the rules dictate which
+                cells live and die.
             </p>
             <h4>The Rules</h4>
             <ul>

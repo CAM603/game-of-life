@@ -139,7 +139,67 @@ export const gliderGun = (world) => {
     world[25][31] = 1;
     world[26][29] = 1;
     world[27][30] = 1;
-    // world[27][35] = 1;
+
+    return world;
+};
+
+export const house = (world) => {
+    world[44][10] = 1;
+    world[43][10] = 1;
+    world[42][10] = 1;
+    world[41][10] = 1;
+    world[40][10] = 1;
+    world[39][10] = 1;
+    world[38][10] = 1;
+    world[37][10] = 1;
+
+    world[44][18] = 1;
+    world[43][18] = 1;
+    world[42][18] = 1;
+    world[41][18] = 1;
+    world[40][18] = 1;
+    world[39][18] = 1;
+    world[38][18] = 1;
+    world[37][18] = 1;
+
+    world[44][16] = 1;
+    world[43][16] = 1;
+    world[42][16] = 1;
+    world[42][15] = 1;
+    world[42][14] = 1;
+    world[43][14] = 1;
+    world[44][14] = 1;
+
+    world[36][10] = 1;
+    world[36][9] = 1;
+    world[36][11] = 1;
+    world[36][12] = 1;
+    world[36][13] = 1;
+    world[36][14] = 1;
+    world[36][15] = 1;
+    world[36][16] = 1;
+    world[36][17] = 1;
+    world[36][18] = 1;
+    world[36][19] = 1;
+    world[35][18] = 1;
+    world[34][17] = 1;
+    world[33][16] = 1;
+    world[32][15] = 1;
+    world[31][14] = 1;
+    world[32][13] = 1;
+    world[33][12] = 1;
+    world[34][11] = 1;
+    world[35][10] = 1;
+
+    world[38][15] = 1;
+    world[38][16] = 1;
+    world[39][16] = 1;
+    world[39][15] = 1;
+
+    world[38][12] = 1;
+    world[38][13] = 1;
+    world[39][13] = 1;
+    world[39][12] = 1;
 
     return world;
 };

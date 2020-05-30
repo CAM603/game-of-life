@@ -2,19 +2,22 @@
 
 ## The Game
 
-A very famous cellular automaton is John Conway's Game of Life. app. This game is a class of discrete model known as a Cellular Automaton, abbreviated CA.
+A very famous cellular automaton is John Conway's Game of Life. This game is a class of discrete model known as a Cellular Automaton, abbreviated CA.
 
-It's made up of a grid of cells (usually 2D, but can be any dimension) that follow a simple set of rules from which complex behaviors can emerge.
+The game consists of a grid of cells, each cell having one of two states: dead or alive. A new generation of cells is created according to a simple set of rules, from which complex behaviors can emerge.
 
-In the Game of Life, these rules examine each cell of the grid. For each cell, it counts that cell's eight neighbors (up, down, left, right, and diagonals), and then act on that result.
+These rules examine each cell of the grid. For each cell, it counts that cell's eight neighbors (up, down, left, right, and diagonals), and then acts on that result.
 
--   If the cell is alive and has 2 or 3 neighbors, then it remains alive. Else it dies.
--   If the cell is dead and has exactly 3 neighbors, then it comes to life. Else if remains dead.
-    From those two rules, many types of "creatures" can be created that move around the "landscape".
+-   Any live cell with fewer than two live neighbors dies, as if by underpopulation.
+-   Any live cell with two or three live neighbors lives on to the next generation.
+-   Any live cell with more than three live neighbors dies, as if by overpopulation.
+-   Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+
+From these rules, many types of "creatures" can be created that move around the "landscape".
 
 ## Cellular Automata
 
-A cellular automaton (plural: cellular automata, abbreviated CA) is a program that operates on data typically stored in a 2D grid.
+A cellular automaton (CA's) is a program that operates on data typically stored in a 2D grid.
 
 A simple set of rules describes how the value in a cell on the grid changes over time, often as the result of the states of that cell's neighbors.
 
@@ -24,7 +27,7 @@ This new grid becomes the "current" state of the simulation, and the process rep
 
 The beautiful thing about cellular automata is that sometimes very complex behavior can emerge from very simple rules.
 
-Practically speaking, CAs have been used in biological and chemical simulations and other areas of research, such as CA-based computer processors, and other numeric techniques.
+Practically speaking, CA's have been used in biological and chemical simulations and other areas of research, such as CA-based computer processors, and other numeric techniques.
 
 ## Turing Completeness
 
