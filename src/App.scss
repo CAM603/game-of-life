@@ -2,6 +2,7 @@
 
 $light-color: rgb(173, 170, 170);
 $dark-color: rgb(19, 22, 19);
+$accent-color: rgb(153, 252, 5);
 
 * {
     box-sizing: border-box;
@@ -126,11 +127,11 @@ html {
                         }
                     }
                     .cell:hover {
-                        border-color: rgb(153, 252, 5);
+                        border-color: $accent-color;
                         background-color: black;
                     }
                     .cell.alive {
-                        background-color: rgb(153, 252, 5);
+                        background-color: $accent-color;
                     }
                 }
                 .controls {
@@ -167,7 +168,7 @@ html {
                     }
 
                     .control:hover {
-                        color: rgb(153, 252, 5);
+                        color: $accent-color;
                     }
 
                     .control:active {
@@ -251,7 +252,7 @@ html {
                 }
                 .preset:hover {
                     color: white;
-                    border-color: rgb(153, 252, 5);
+                    border-color: $accent-color;
                     background-color: $dark-color;
                 }
             }
@@ -287,7 +288,7 @@ html {
         }
 
         p {
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: $light-color;
             line-height: 1.5;
 
@@ -296,12 +297,36 @@ html {
             }
         }
         li {
-            font-size: 1rem;
+            font-size: 1.2rem;
             line-height: 1.5;
             color: $light-color;
 
             @media (max-width: 675px) {
                 font-size: 0.8rem;
+            }
+        }
+    }
+    .footer {
+        width: 100%;
+        padding-top: 2rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .upper-footer {
+            padding: 5px;
+
+            p {
+                color: $light-color;
+                font-size: 0.9rem;
+            }
+        }
+        .lower-footer {
+            padding: 5px;
+
+            .link {
+                font-size: 1.5rem;
+                padding: 5px;
             }
         }
     }
@@ -321,5 +346,5 @@ html {
     color: white;
 }
 .link:hover {
-    color: rgb(153, 252, 5);
+    color: $accent-color;
 }

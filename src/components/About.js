@@ -10,6 +10,7 @@ const About = () => {
                     className="link"
                     href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     John Conway
                 </a>{" "}

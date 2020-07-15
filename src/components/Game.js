@@ -5,6 +5,7 @@ import Grid from "./Grid";
 import Controls from "./Controls";
 import Presets from "./Presets";
 import About from "./About";
+import Footer from "./Footer";
 
 const Game = () => {
     const [world, setWorld] = useState(() => {
@@ -104,6 +105,7 @@ const Game = () => {
                 </div>
             </div>
             <About />
+            <Footer />
         </div>
     );
 };
