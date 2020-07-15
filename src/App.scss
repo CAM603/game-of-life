@@ -5,6 +5,7 @@ $dark-color: rgb(19, 22, 19);
 
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 html {
     background-color: $dark-color;
@@ -22,216 +23,239 @@ html {
     flex-direction: column;
     align-items: center;
 
-    h1 {
-        font-size: 3rem;
-        margin: 0;
-        text-align: center;
-        color: white;
-        padding: 10px 0;
-        line-height: 1.5;
-
-        @media (max-width: 675px) {
-            font-size: 1.7rem;
-        }
-    }
-
-    .game-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: solid black 2px;
-        padding: 0 10px;
-        background-color: black;
-        border-radius: 5px;
-
-        @media (max-width: 450px) {
-            flex-direction: column;
-        }
-
-        .game {
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    .mobile-container {
+        @media (max-width: 550px) {
+            width: 100%;
             background-color: black;
-            width: 90%;
+        }
 
-            @media (max-width: 450px) {
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-align: center;
+            color: white;
+            padding: 10px 0;
+            line-height: 1.5;
+
+            @media (max-width: 675px) {
+                font-size: 1.7rem;
+            }
+        }
+
+        .game-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid black 2px;
+            padding: 0 10px;
+            background-color: black;
+            border-radius: 5px;
+
+            @media (max-width: 550px) {
+                flex-direction: column;
                 width: 100%;
-                padding: 0;
+                padding: 0px;
             }
 
-            h4 {
-                font-size: 1.5rem;
-                margin: 0;
-                padding: 5px;
-
-                @media (max-width: 675px) {
-                    font-size: 1.2rem;
-                }
-            }
-
-            .generation {
-                color: $light-color;
-            }
-            .grid {
-                background-color: black;
-                width: 40rem;
-                height: 40rem;
+            .game {
+                padding: 10px;
                 display: flex;
-                flex-flow: row wrap;
-
-                @media (max-width: 800px) {
-                    width: 30rem;
-                    height: 30rem;
-                }
-
-                @media (max-width: 675px) {
-                    width: 20rem;
-                    height: 20rem;
-                }
-
-                @media (max-width: 350px) {
-                    width: 15rem;
-                    height: 15rem;
-                }
-                .cell {
-                    cursor: pointer;
-                    width: 0.8rem;
-                    height: 0.8rem;
-                    border: solid 1px $dark-color;
-
-                    @media (max-width: 800px) {
-                        width: 0.6rem;
-                        height: 0.6rem;
-                    }
-
-                    @media (max-width: 675px) {
-                        width: 0.4rem;
-                        height: 0.4rem;
-                    }
-
-                    @media (max-width: 350px) {
-                        width: 0.3rem;
-                        height: 0.3rem;
-                    }
-                }
-                .cell:hover {
-                    border-color: rgb(153, 252, 5);
-                    background-color: black;
-                }
-                .cell.alive {
-                    // background-color: red;
-                    background-color: rgb(153, 252, 5);
-                }
-            }
-            .controls {
-                padding: 10px 0;
-                background-color: black;
-                display: flex;
-                width: 100%;
-                justify-content: space-between;
+                flex-direction: column;
                 align-items: center;
+                background-color: black;
+                width: 90%;
 
-                @media (max-width: 675px) {
-                    padding: 5px 0;
+                @media (max-width: 450px) {
+                    width: 100%;
+                    padding: 0px;
                 }
 
-                .control {
-                    font-size: 1.6rem;
-                    color: white;
+                h4 {
+                    font-size: 1.5rem;
+                    margin: 0;
+                    padding: 5px;
+
                     @media (max-width: 675px) {
                         font-size: 1.2rem;
                     }
                 }
 
-                .control:hover {
-                    color: rgb(153, 252, 5);
+                .generation {
+                    color: $light-color;
                 }
-
-                .control:active {
-                    color: darkgreen;
-                }
-
-                .main {
+                .grid {
+                    background-color: black;
+                    width: 40rem;
+                    height: 40rem;
                     display: flex;
-                    justify-content: flex-start;
+                    flex-flow: row wrap;
 
-                    .control {
-                        padding: 0 10px;
+                    @media (max-width: 800px) {
+                        width: 30rem;
+                        height: 30rem;
                     }
-                }
 
-                .speed {
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-end;
+                    @media (max-width: 675px) {
+                        width: 25rem;
+                        height: 25rem;
+                    }
 
-                    p {
-                        margin: 0;
-                        font-size: 1.5rem;
-                        color: white;
-                        padding: 0 5px;
+                    @media (max-width: 350px) {
+                        width: 15rem;
+                        height: 15rem;
+                    }
+                    .cell {
+                        cursor: pointer;
+                        width: 0.8rem;
+                        height: 0.8rem;
+                        border: solid 1px $dark-color;
 
                         @media (max-width: 800px) {
+                            width: 0.6rem;
+                            height: 0.6rem;
+                        }
+
+                        @media (max-width: 675px) {
+                            width: 0.5rem;
+                            height: 0.5rem;
+                        }
+
+                        @media (max-width: 350px) {
+                            width: 0.3rem;
+                            height: 0.3rem;
+                        }
+                    }
+                    .cell:hover {
+                        border-color: rgb(153, 252, 5);
+                        background-color: black;
+                    }
+                    .cell.alive {
+                        background-color: rgb(153, 252, 5);
+                    }
+                }
+                .controls {
+                    padding: 10px 0;
+                    background-color: black;
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    @media (max-width: 675px) {
+                        padding: 5px 0;
+                    }
+
+                    @media (max-width: 450px) {
+                        max-width: 19rem;
+                    }
+
+                    @media (max-width: 350px) {
+                        width: 100%;
+                    }
+
+                    .control {
+                        font-size: 1.6rem;
+                        color: white;
+
+                        @media (max-width: 675px) {
                             font-size: 1.2rem;
                         }
-                        @media (max-width: 675px) {
+
+                        @media (max-width: 350px) {
                             font-size: 1rem;
                         }
                     }
+
+                    .control:hover {
+                        color: rgb(153, 252, 5);
+                    }
+
+                    .control:active {
+                        color: darkgreen;
+                    }
+
+                    .main {
+                        display: flex;
+                        justify-content: flex-start;
+
+                        .control {
+                            padding: 0 10px;
+                        }
+                    }
+
+                    .speed {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+
+                        p {
+                            margin: 0;
+                            font-size: 1.5rem;
+                            color: white;
+                            padding: 0 5px;
+
+                            @media (max-width: 800px) {
+                                font-size: 1.2rem;
+                            }
+                            @media (max-width: 675px) {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
                 }
             }
-        }
-        .presets {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            width: 100%;
+            .presets {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
 
-            h3 {
-                color: white;
-                text-align: center;
-                margin: 0;
-                font-size: 1.5rem;
+                h3 {
+                    color: white;
+                    text-align: center;
+                    margin: 0;
+                    font-size: 1.5rem;
 
-                @media (max-width: 675px) {
+                    @media (max-width: 675px) {
+                        font-size: 1rem;
+                    }
+                }
+
+                .preset {
+                    margin: 5px 0;
+                    border-radius: 0.2rem;
+                    background-color: black;
+                    border: 2px solid darkgreen;
                     font-size: 1rem;
-                }
-            }
 
-            .preset {
-                margin: 5px 0;
-                border-radius: 0.2rem;
-                background-color: black;
-                border: 2px solid darkgreen;
-                font-size: 1rem;
-
-                @media (max-width: 675px) {
-                    font-size: 0.7rem;
-                    margin: 4px 0;
-                    padding: 4px;
+                    @media (max-width: 675px) {
+                        font-size: 0.7rem;
+                        margin: 4px 0;
+                        padding: 4px;
+                    }
                 }
-            }
-            .preset:hover {
-                color: white;
-                border-color: rgb(153, 252, 5);
-                background-color: $dark-color;
+                .preset:hover {
+                    color: white;
+                    border-color: rgb(153, 252, 5);
+                    background-color: $dark-color;
+                }
             }
         }
     }
     .about {
-        width: 75%;
+        width: 90%;
         padding: 5px;
+        max-width: 950px;
 
         @media (max-width: 675px) {
-            width: 100%;
-            max-width: 350px;
+            // width: 100%;
+            // max-width: 450px;
         }
 
         h3 {
             font-size: 2rem;
             color: white;
+            padding: 1em 0;
 
             @media (max-width: 675px) {
                 font-size: 1.5rem;
@@ -241,6 +265,7 @@ html {
         h4 {
             font-size: 1.5rem;
             color: white;
+            padding: 1em 0;
 
             @media (max-width: 675px) {
                 font-size: 1rem;

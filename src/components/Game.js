@@ -79,20 +79,29 @@ const Game = () => {
 
     return (
         <div className="screen">
-            <h1>John Conway's Game of Life</h1>
-            <div className="game-container">
-                <div className="game">
-                    <h4 className="generation">Generation: {generation}</h4>
-                    <Grid world={world} setWorld={setWorld} playing={playing} />
-                    <Controls
-                        playing={playing}
-                        togglePlay={togglePlay}
-                        clear={clear}
-                        next={next}
-                        changeSpeed={changeSpeed}
+            <div className="mobile-container">
+                <h1>John Conway's Game of Life</h1>
+                <div className="game-container">
+                    <div className="game">
+                        <h4 className="generation">Generation: {generation}</h4>
+                        <Grid
+                            world={world}
+                            setWorld={setWorld}
+                            playing={playing}
+                        />
+                        <Controls
+                            playing={playing}
+                            togglePlay={togglePlay}
+                            clear={clear}
+                            next={next}
+                            changeSpeed={changeSpeed}
+                        />
+                    </div>
+                    <Presets
+                        setWorld={setWorld}
+                        setGeneration={setGeneration}
                     />
                 </div>
-                <Presets setWorld={setWorld} setGeneration={setGeneration} />
             </div>
             <About />
         </div>
