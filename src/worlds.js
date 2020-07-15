@@ -7,6 +7,8 @@ export const getWorld = (figure) => {
     switch (figure) {
         case "earth":
             return earth(newWorld);
+        default:
+            break;
     }
 };
 

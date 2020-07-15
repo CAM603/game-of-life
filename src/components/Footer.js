@@ -8,7 +8,7 @@ const Footer = () => {
                 <p>
                     Created and designed by{" "}
                     <a
-                        href="#"
+                        href="https://github.com/CAM603"
                         target="_blank"
                         className="link"
                         rel="noopener noreferrer"

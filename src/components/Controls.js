@@ -11,12 +11,16 @@ const Controls = ({ playing, togglePlay, clear, next, changeSpeed }) => {
                 <Button className="control" onClick={togglePlay}>
                     {playing ? <FaRegStopCircle /> : <FaRegPlayCircle />}
                 </Button>
-                <Button className="control" onClick={clear}>
-                    <FaEraser />
-                </Button>
-                <Button className="control" onClick={next}>
-                    <BsSkipForward />
-                </Button>
+                {playing ? null : (
+                    <>
+                        <Button className="control" onClick={clear}>
+                            <FaEraser />
+                        </Button>
+                        <Button className="control" onClick={next}>
+                            <BsSkipForward />
+                        </Button>
+                    </>
+                )}
             </div>
             <div className="speed">
                 <Button

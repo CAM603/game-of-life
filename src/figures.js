@@ -12,6 +12,8 @@ export const getFigure = (figure) => {
             return gliderLeft(newWorld);
         case "gliderGun":
             return gliderGun(newWorld);
+        default:
+            break;
     }
 };
 

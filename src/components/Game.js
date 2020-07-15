@@ -48,6 +48,9 @@ const Game = () => {
     const clear = () => {
         setGeneration(0);
         setWorld(generateWorld());
+        if (playing) {
+            setPlaying(false);
+        }
     };
 
     const next = () => {
@@ -75,6 +78,8 @@ const Game = () => {
                     return setSpeed((speedRef.current = 1100));
                 }
             }
+            default:
+                break;
         }
     };
 
