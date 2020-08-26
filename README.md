@@ -4,7 +4,7 @@ A very famous cellular automaton is John Conway's Game of Life. The game is a cl
 
 ## Motivation
 
-John Conway's Game of Life is renown in the realm of computer science and mathematics. his game that visually demonstrates an algorithm known as _cellular automaton_ that simulates "life" on a 2D grid. It has been recreated many times for theoretical interest and as a practical exercise in programming and data display. It was my turn.
+John Conway's Game of Life is renowned in the realm of computer science and mathematics. his game that visually demonstrates an algorithm known as _cellular automaton_ that simulates "life" on a 2D grid. It has been recreated many times for theoretical interest and as a practical exercise in programming and data display. It was my turn.
 
 ## Screenshots
 
@@ -37,6 +37,8 @@ John Conway's Game of Life is renown in the realm of computer science and mathem
 3.  Clear the grid and start again!
 
 ## Code Example
+
+#### Grid Generator
 
 ```js
 // Takes in a world and returns a new world based on the rules of life
