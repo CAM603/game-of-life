@@ -1,4 +1,6 @@
-# Conway's Game of Life
+# Game of Life
+
+A very famous cellular automaton is John Conway's Game of Life. The game is a class of discrete model known as a cellular automaton, [this](https://game-of-life-black.vercel.app/) is my rendition.
 
 ## The Game
 
