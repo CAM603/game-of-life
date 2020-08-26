@@ -1,60 +1,59 @@
 # Game of Life
 
-A very famous cellular automaton is John Conway's Game of Life. The game is a class of discrete model known as a cellular automaton, [this](https://game-of-life-black.vercel.app/) is my rendition.
+A very famous cellular automaton is John Conway's Game of Life. The game is a class of discrete model known as a cellular automaton, see my rendition [here](https://game-of-life-black.vercel.app/).
 
-## The Game
+## Motivation
 
-A very famous cellular automaton is John Conway's Game of Life. This game is a class of discrete model known as a Cellular Automaton, abbreviated CA.
+John Conway's Game of Life is renowned in the realm of computer science and mathematics. his game that visually demonstrates an algorithm known as _cellular automaton_ that simulates "life" on a 2D grid. It has been recreated many times for theoretical interest and as a practical exercise in programming and data display. It was my turn.
 
-The game consists of a grid of cells, each cell having one of two states: dead or alive. A new generation of cells is created according to a simple set of rules, from which complex behaviors can emerge.
+## Screenshots
 
-These rules examine each cell of the grid. For each cell, it counts that cell's eight neighbors (up, down, left, right, and diagonals), and then acts on that result.
+#### Earth Configuration
 
--   Any live cell with fewer than two live neighbors dies, as if by underpopulation.
--   Any live cell with two or three live neighbors lives on to the next generation.
--   Any live cell with more than three live neighbors dies, as if by overpopulation.
--   Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+![Image of Earth](./images/earth.png)
 
-From these rules, many types of "creatures" can be created that move around the "landscape".
+#### Glider Gun Configuration
 
-## Cellular Automata
+![Image of glider gun](./images/gliderGun.png)
 
-A cellular automaton (CA's) is a program that operates on data typically stored in a 2D grid.
+## Features
 
-A simple set of rules describes how the value in a cell on the grid changes over time, often as the result of the states of that cell's neighbors.
+-   Preconfigured grids
+    -   Earth
+    -   Pulsar
+    -   Glider
+    -   Glider gun
+    -   Random
+-   Generation counter
+-   Generation increment control
+-   Start and stop controls
+-   Speed controls
+-   Ability to create your own grid configuration
 
-Each round of the simulation examines the current state of the grid, and then produces an entirely new grid consisting of the old state.
+## How To
 
-This new grid becomes the "current" state of the simulation, and the process repeats. Each new grid is referred to as a generation.
+1.  Select or create a new grid configuration.
+2.  Press play or step through each generation, one at a time.
+3.  Clear the grid and start again!
 
-The beautiful thing about cellular automata is that sometimes very complex behavior can emerge from very simple rules.
+## Code Example
 
-Practically speaking, CA's have been used in biological and chemical simulations and other areas of research, such as CA-based computer processors, and other numeric techniques.
+#### Grid Generator
 
-## Turing Completeness
-
-We say a computing system is Turing Complete if it is capable of performing arbitrary, general purpose computation.
-
-Using a construct in The Game of Life called a glider gun, it's possible to build a rudimentary NAND gate in the Game of Life. While a NAND gate by itself isn't enough to be Turing Complete, the "infinite" grid of The Game of Life allows you to use them (or any other functionally complete operator) to build any other type of logical "circuitry" and memory, as well.
-
-Anything computable can be computed in The Game of Life given a large enough grid and enough time. Most people, however, find JavaScript to be a far easier development medium.
-
-## Double Buffering
-
-There's a technique that's commonly used in graphics programming called double buffering. This is when we display one buffer to the user, but do work on one that's hidden from sight. In this way, the user doesn't see the buffer being generated, they only see the one that was previously completed.
-
-When we're done doing work on the hidden buffer, we page flip and show the hidden buffer to the user. Then the previously-displayed buffer becomes the new hidden buffer, and work begins again.
-
-There are multiple benefits to this approach.
-
-One is that the user doesn't see the work being progressively completed. From their perspective, the work is suddenly done as soon as the page flips.
-
-Another is that the program can use the previous buffer (i.e. the one that is currently being displayed) as a source for material to perform calculations to produce the next buffer. This is particularly beneficial where you need to produce a completely new output based on the complete previous output. If you were to only use a single buffer, you'd have to overwrite the pixels as you went, and this might affect the outcome of the subsequent pixels in an undesirable way.
-
-And this is very useful when implementing a cellular automaton.
-
-There will be two arrays of data for the automaton. One of them holds the data that the user currently sees on the canvas. The other one is where the next frame to be shown is being actively constructed.
-
-After the new frame is constructed, the next from becomes the current frame, and the current frame becomes the next frame. And the process repeats.
-
-Also note that this approach is vaguely reminiscent of the Model and View in the MVC pattern where the Model is manipulated then displayed by the View.
+```js
+// Takes in a world and returns a new world based on the rules of life
+export const worldBuffer = (world) => {
+    let newWorld = generateWorld();
+    for (let i = 0; i < GRID_SIZE; i++) {
+        for (let j = 0; j < GRID_SIZE; j++) {
+            let neighbors = getNeighbors(i, j, world);
+            // Determine which cells live and die
+            newWorld[i][j] =
+                neighbors === 3 || (neighbors === 2 && world[i][j] === 1)
+                    ? 1
+                    : 0;
+        }
+    }
+    return newWorld;
+};
+```
